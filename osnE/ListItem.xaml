@@ -1,0 +1,24 @@
+﻿<Window
+	x:Class="osnE.ListItem"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Left="0.0" Top="0.0"  
+	Height="45" Width="450" SizeToContent="Width" 
+	MinWidth="450" ResizeMode="NoResize" 
+	HorizontalAlignment="Left" 
+	WindowStyle="None" 
+	AllowsTransparency="True" 
+	Topmost="True" 
+	ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+	FontFamily="/osnE;component/Fonts/#Segoe UI" 
+	FontSize="24" Background="Transparent"
+    ShowInTaskbar="False"
+    
+    >
+	<Grid Name="liGrid" >
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"></RowDefinition>
+		</Grid.RowDefinitions>
+        <TextBlock  Height="45" Name="txtSearchString" Background="#E50A0A0A" Padding="10,5,30,5" HorizontalAlignment="Left" TextWrapping="NoWrap" Text=""  VerticalAlignment="Top" UseLayoutRounding="False" Foreground="White" Panel.ZIndex="100"/>
+	</Grid>
+</Window>

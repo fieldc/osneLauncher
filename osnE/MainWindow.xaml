@@ -1,0 +1,30 @@
+﻿<Window x:Class="osnE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Left="0.0" Top="0.0"  
+		Height="45" Width="450" MinWidth="450" SizeToContent="Width" 
+		ResizeMode="NoResize" 
+		HorizontalAlignment="Left" 
+		WindowStyle="None" 
+		AllowsTransparency="True" 
+		Topmost="True" 
+        ShowInTaskbar="False"
+        WindowStartupLocation="Manual"
+        ShowActivated="False"
+        Visibility="Hidden"
+		ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+		FontFamily="/osnE;component/Fonts/#Segoe UI" 
+		FontSize="24" Background="Transparent">
+	<Window.Resources>
+		
+	</Window.Resources>
+	<Border Background="#FFA6C271" CornerRadius="0,0,6,0" BorderThickness="0,0,5,0">
+			<Grid Name="osnEGrid" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"></RowDefinition>
+				</Grid.RowDefinitions>
+    			<TextBlock Name="titleRow" Grid.Row="0" Background="#FFA6C271" Padding="10,5,30,5" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="Welcome to osnE! Enter a command or type &quot;help&quot; for assistance"  VerticalAlignment="Top" UseLayoutRounding="False" Foreground="White" Panel.ZIndex="100"/>
+			</Grid>
+	</Border>
+	
+</Window>

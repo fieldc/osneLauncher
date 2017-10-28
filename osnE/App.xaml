@@ -1,0 +1,32 @@
+﻿<Application
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="osnE.App"
+	StartupUri="MainWindow.xaml">
+	<Application.Resources>
+		<!-- Resources scoped at the Application level should be defined here. -->
+		<Style x:Key="InlineHelpHighLight" TargetType="{x:Type TextBlock}">
+			<Setter Property="Background" Value="#00000000"/>
+			<Setter Property="Foreground" Value="#FF999999"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="FontSize" Value="24"/>	
+		</Style>
+		<Style x:Key="SuggestionText" TargetType="{x:Type TextBlock}">
+			<Setter Property="Background" Value="#00000000"/>
+			<Setter Property="Foreground" Value="#FF7F9845"/>
+			<Setter Property="FontSize" Value="24"/>	
+		</Style>
+		<Style x:Key="SuggestionHighLight" TargetType="{x:Type TextBlock}">
+			<Setter Property="Background" Value="#00000000"/>
+			<Setter Property="Foreground" Value="#FF9FBE57"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="FontSize" Value="24"/>	
+		</Style>
+		<Style x:Key="VerbHighLight" TargetType="{x:Type TextBlock}">
+			<Setter Property="Background" Value="#00000000"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="FontSize" Value="24"/>	
+		</Style>
+	</Application.Resources>
+</Application>
