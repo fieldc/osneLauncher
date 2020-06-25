@@ -42,10 +42,10 @@ namespace osnE.Verbs
             List<WindowInfo> g = new List<WindowInfo>();
             g.AddRange(WindowEnumerator.EnumerateWindows());
             this.subjects = g;
-            foreach(WindowInfo w in g)
-            {
-                logger.DebugFormat("Found Window name={0}", w.WindowName);
-            }
+            //foreach(WindowInfo w in g)
+            //{
+            //   logger.DebugFormat("Found Window name={0}", w.WindowName);
+            //}
         }
 
         public override void Execute()

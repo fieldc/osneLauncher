@@ -8,14 +8,14 @@ using osnE.Interop;
 
 namespace osnE.Verbs
 {
-    public abstract class BaseURLOpenerVerb : Verb
+    public abstract class BaseUrlOpenerVerb : Verb
     {
-        protected string format;
+        private readonly string _format;
 
-        public BaseURLOpenerVerb(string name,string description,string subjectHelp,string urlFormat):
+        protected BaseUrlOpenerVerb(string name,string description,string subjectHelp,string urlFormat):
             base(name, description, SubjectType.Arbitrary, subjectHelp, PredicateType.None)
         {
-            this.format = urlFormat;
+            this._format = urlFormat;
         }
         public override List<string> GetSubjectsOptions(string search)
         {
@@ -27,11 +27,15 @@ namespace osnE.Verbs
         }
         public override void Execute()
         {
+            if(String.IsNullOrEmpty(this.subject)){
+                return;
+            }
             this.subject = this.subject.Trim();
-            string url = String.Format(this.format, this.subject);
+            string url = String.Format(this._format, this.subject);
+
             ProcessStartInfo p = new ProcessStartInfo();
-            p.UseShellExecute = true;
-            p.FileName = Uri.EscapeUriString(url);
+            p.FileName = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ProgramFiles) +"/Google/Chrome/Application/chrome.exe";
+            p.Arguments = String.Format("--new-window \"{0}\"",Uri.EscapeUriString(url));
             Process.Start(p);
         }
     }

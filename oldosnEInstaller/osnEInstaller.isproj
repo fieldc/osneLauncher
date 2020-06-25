@@ -7,7 +7,7 @@
 		<Configuration>Debug</Configuration>
 		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
 	</PropertyGroup>
-	<ItemGroup>
+	<ItemGroup> 
 		<!-- The InstallShieldProject item selects the project to build -->
 		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
 		<!-- The InstallShieldReleaseFlags sets Release Flags -->

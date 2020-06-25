@@ -59,7 +59,8 @@ namespace osnE
                 new LearnVerb(),
                 new CapslockVerb(),
                 new UnlearnVerb(),
-                new QuitVerb()
+                new QuitVerb(),
+                new SentieoVerb()
             };
             foreach (Verb v in l)
             {

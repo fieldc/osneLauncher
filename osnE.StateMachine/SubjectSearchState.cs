@@ -56,9 +56,11 @@ namespace osnE.StateMachine
             }
             if (k is TabKeyPressedEvent)
             {
-                this.subjectTyped = this.suggestions[this.selectedSuggestion];
-                this.selectedSuggestion = 0;
-                this.suggestions = this.me.GetSubjectsOptions(this.subjectTyped);
+                if(this.suggestions.Count>0){
+                    this.subjectTyped = this.suggestions[this.selectedSuggestion];
+                    this.selectedSuggestion = 0;
+                    this.suggestions = this.me.GetSubjectsOptions(this.subjectTyped);
+                }
                 return this;
             }
             if(k is EnterKeyPressedEvent )

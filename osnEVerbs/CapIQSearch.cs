@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace osnE.Verbs
 {
-    public class CapIQSearch : BaseURLOpenerVerb
+    public class CapIQSearch : BaseUrlOpenerVerb
     {
         public CapIQSearch():
             base("ciqs", "Opens cap iq search page", "search string", "https://www.capitaliq.com/ciqdotnet/search/searchprofiles.aspx?SearchText={0}&SearchText1={0}")

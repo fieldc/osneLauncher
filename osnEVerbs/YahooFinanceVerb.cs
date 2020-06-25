@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace osnE.Verbs
 {
-    public class YahooFinanceVerb : BaseURLOpenerVerb
+    public class YahooFinanceVerb : BaseUrlOpenerVerb
     {
         public YahooFinanceVerb() :
             base("yf", "Yahoo Finance", "ticker", "http://finance.yahoo.com/q?s={0}&ql=1")

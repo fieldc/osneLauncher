@@ -11,11 +11,13 @@ using System.Threading.Tasks;
 using System.Threading;
 using osnE.Interop;
 using WindowsInput;
+using WindowsInput.Native;
 
 namespace osnE.WindowsHooks
 {
         public class KeyboardManager : IDisposable
         {
+            private InputSimulator _inputSimulator = new InputSimulator();
             private object _currentClipboardLock = new object { };
             private IDataObject currentClipboard = new DataObject();
             private volatile bool activated = false;
@@ -69,18 +71,18 @@ namespace osnE.WindowsHooks
 
             public void CapslockOff()
             {
-                if (InputSimulator.IsTogglingKeyInEffect(VirtualKeyCode.CAPITAL))
+                if (_inputSimulator.InputDeviceState.IsTogglingKeyInEffect(VirtualKeyCode.CAPITAL))
                 {
                     triggeredCapslock = true;
-                    InputSimulator.SimulateKeyPress(VirtualKeyCode.CAPITAL);
+                    _inputSimulator.Keyboard.KeyPress(VirtualKeyCode.CAPITAL);
                 }
             }
             public void CapslockOn()
             {
-                if (!InputSimulator.IsTogglingKeyInEffect(VirtualKeyCode.CAPITAL))
+                if (!_inputSimulator.InputDeviceState.IsTogglingKeyInEffect(VirtualKeyCode.CAPITAL))
                 {
                     triggeredCapslock = true;
-                    InputSimulator.SimulateKeyPress(VirtualKeyCode.CAPITAL);
+                    _inputSimulator.Keyboard.KeyPress(VirtualKeyCode.CAPITAL);
                 }
             }
             private IntPtr SetHook(NativeMethods.LowLevelKeyboardProc proc)
@@ -120,7 +122,7 @@ namespace osnE.WindowsHooks
                             lock (this._currentClipboardLock)
                             {
                                 tmpClipboard = Clipboard.GetDataObject();
-                                InputSimulator.SimulateModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_C);
+                                _inputSimulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_C);
                                 Thread.Sleep(200);
                                 try
                                 {

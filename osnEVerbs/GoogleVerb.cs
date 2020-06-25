@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace osnE.Verbs
 {
     
-    public class GoogleVerb: BaseURLOpenerVerb
+    public class GoogleVerb: BaseUrlOpenerVerb
     {
         public GoogleVerb() :
-            base("google", "Google", "search terms", "https://www.google.com/#q={0}")
+            base("google", "Google", "search terms", "https://www.google.com/search?q={0}")
         {
 
         }
